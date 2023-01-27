@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+    <center>
+        <h1>用户注册</h1>
+        <!--
+            表单组件<form>
+            表单用于将用于在页面上输入的信息提交给服务端使用的组件。
+            表单上有两个重要的属性:
+            action:用于指定表单提交的路径
+            method:用于指定表单提交的方式，该方式有两个可选值
+                    GET:地址栏形式提交，表单数据会被拼接到URL的抽象路径中
+                    POST:打包提交，表单数据会被包含在请求的消息正文中。
+                         当表单数据含有用户隐私信息或附件时则需要使用POST形式提交表单。
+                    method属性不指定时，默认为GET形式提交表单。
+            注意:所有输入组件只有被包含在form表单中并且必须使用name属性为该组件取名字才会被提交！！
+                输入组件取的名字可以任意定义，但是不能有中文(英文数字)。
+
+            http://localhost:8088/myweb/reg?username=fancq&password=123456&nickname=chuanqi&age=22
+            表单提交后的URL中抽象路径:
+            /myweb/reg?username=fancq&password=123456&nickname=chuanqi&age=22
+
+            URL地址中抽象路径部分可以使用"?"分隔为两块,分别是请求部分和参数部分
+            请求部分由表单action决定.参数部分由表单中输入框决定
+            格式:
+            请求部分?输入框1名字=输入框1信息&输入框2名字=输入框2信息&.....
+         -->
+        <form action="/myweb/reg" method="get">
+            <table border="1">
+              <tr>
+                <td>用户名</td>
+                <td><input name="username" type="text"></td>
+              </tr>
+              <tr>
+                <td>密码</td>
+                <td><input name="password" type="password"></td>
+              </tr>
+              <tr>
+                <td>昵称</td>
+                <td><input name="nickname" type="text"></td>
+              </tr>
+              <tr>
+                <td>年龄</td>
+                <td><input name="age" type="text"></td>
+              </tr>
+                <tr>
+                    <td><img src="/myweb/random.jpg"></td>
+                    <td><input name="code" type="text"></td>
+                </tr>
+              <tr>
+                <td colspan="2" align="center">
+                  <input type="submit" value="注册">
+                </td>
+              </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

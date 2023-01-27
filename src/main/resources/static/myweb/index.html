@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的首页</title>
+</head>
+<body>
+<!--
+     <h1>-<h6>:标题，分为1-6级标题。标题独占一行
+     <center>:居中，该标签在HTML5中已经不再建议使用了。没学习样式前临时使用
+     <input>:输入组件。它是一套组件，用来在页面上获取用户输入的。
+
+             属性type决定着该组件的样式。
+             常见的值有:
+                 text:文本框
+                 button:按钮
+                 checkbox:多选框
+                 radio:单选框
+                 submit:提交按钮
+                 password:密码框
+     <a>:超链接，标签中间的文本是超链接对应的文字，属性href用于指定跳转的路径
+     <br>:换行
+     <table>标签:表格。属性border用于指定边框。
+                 <table>标签中包含<tr>标签用于表示行
+                 <tr>标签中包含<td>标签用于表示列
+                 <td>标签中常见属性:
+                 align:对其方式。left左对齐,right右对齐,center剧中对其
+                 colspan:跨列合并列，合并是从左向右合并列
+                 rowspan:跨行合并列，合并是从上向下合并列
+
+     <img>:图片标签，src属性用于指定图片的路径
+
+     在页面上我们经常会使用路径去定位页面上要使用的额外资源，比如CSS文件，JS文件
+     图片文件等。
+     例如图片:
+     <img src=""> 这里的src就是用于指定图片的路径的
+     路径分两种:相对路径和绝对路径
+     相对路径常用的:"./",即:当前目录
+     在浏览器中和我们在java源代码中"./"位置不是相同的！！！！！！
+     原因是页面是被浏览器理解的。
+
+     在页面上"./"的位置浏览器理解的是:URL地址当中抽象路径里的最后一个"/"的位置
+     例如:
+     请求inde.html时，我们在地址栏上输入的路径为:
+     http://localhost:8088/myweb/index.html
+     在这个页面上我们使用了<img src="logo.png"> 注:不写"./"默认就是从"./"开始
+     此时浏览器判定该图片的实际位置是哪里，就是根据请求当前页面的URL地址决定:
+     当前URL地址中抽象路径部分为:/myweb/index.html
+     因此"./"理解的就是这里最后一个"/"的位置为:/myweb/
+                                               ^
+                                            ./的位置
+
+     所以确定了图片的抽象路径部分为:/myweb/logo.png
+     因此浏览器实际请求图片的路径为:
+     http://localhost:8088/myweb/logo.png
+
+
+     绝对路径:"/",即:根
+     在页面上"/"的位置浏览器理解的是:URL地址当中抽象路径里的第一个"/"的位置
+     同样，如果在当前页面上<img src="/myweb/logo.png">
+     此时浏览器理解的"/myweb/logo.png"发先路径从"/"开始，即:从根开始。
+     请求当前页面路径:http://localhost:8088/myweb/index.html
+                                        ^
+                                   就是抽象路径的根
+
+     因此该图片实际请求位置:
+     http://localhost:8088/myweb/logo.png
+
+
+     相对路径存在定位不准确情况，常见于服务端转发404时
+     例如:请求一个不存在的页面
+     http://localhost:8088/myweb/123.html
+     服务端发现该页面不存在后，就响应了root目录下的404.html
+     而404页面上我们指定图片如果为:<img src="404.png">
+     那么浏览器在得到404页面时，理解的404图片实际位置是哪里?
+     由于浏览器是请求 http://localhost:8088/myweb/123.html看到的404页面
+     因此浏览器会参考该地址中抽象路径部分:/myweb/123.html来分析404图片位置
+     由于"./404.png"中的"./"是当前目录，因此浏览器认为该图片的抽象路径应当为:
+     "/myweb/404.png"于是请求了:http://localhost:8088/myweb/404.png
+
+     为了定位准确，我们选取绝对路径中的根"/"
+     <img src="/root/404.png">
+
+
+
+ -->
+    <center>
+        <!--<h1>百度</h1>-->
+        <img src="/myweb/logo.png"><br>
+        <input type="text" size="32">
+        <input type="button" value="百度一下" onclick="alert('点你妹啊!')">
+        <br>
+        <a href="/myweb/reg.html">注册</a>
+        <a href="/myweb/login.html">登录</a>
+        <a href="/myweb/showAllUser">用户列表</a>
+        <br>
+        <a href="/myweb/writeArticle.html">发表文章</a>
+        <br>
+        <a href="/myweb/createQR.html">二维码生成器</a>
+        <br>
+        <a href="http://www.taobao.com">淘宝</a>
+        <br>
+        <table border="1">
+            <tr>
+                <td>第一列</td>
+                <td>第二列</td>
+                <td colspan="2" align="center">第三列</td>
+            </tr>
+            <tr>
+                <td rowspan="2">第一列</td>
+                <td>第二列</td>
+                <td>第三列</td>
+                <td>第四列</td>
+            </tr>
+            <tr>
+                <td>第二列</td>
+                <td>第三列</td>
+                <td>第四列</td>
+            </tr>
+        </table>
+    </center>
+
+</body>
+</html>
